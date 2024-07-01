@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BDEventos" Class="EventosDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.TEventos" Member="TEventos">
+    <Type Name="TEventos">
+      <Column Name="evento_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="titulo" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="fecha_evento" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="hora_inicio" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="hora_fin" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="ubicacion_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="creado_por" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="fecha_creacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TEventos_TReportes" Member="TReportes" ThisKey="evento_id" OtherKey="evento_id" Type="TReportes" />
+      <Association Name="TEventos_TReservas" Member="TReservas" ThisKey="evento_id" OtherKey="evento_id" Type="TReservas" />
+      <Association Name="TUbicaciones_TEventos" Member="TUbicaciones" ThisKey="ubicacion_id" OtherKey="ubicacion_id" Type="TUbicaciones" IsForeignKey="true" DeleteRule="SET NULL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TUsuarios" Member="TUsuarios">
+    <Type Name="TUsuarios">
+      <Column Name="usuario_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre_usuario" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="contrasena" Type="System.Data.Linq.Binary" DbType="VarBinary(255) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="correo_electronico" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_creacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="rol" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="TUsuarios_TPerfiles_usuarios" Member="TPerfiles_usuarios" ThisKey="usuario_id" OtherKey="usuario_id" Type="TPerfiles_usuarios" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TPerfiles_usuarios" Member="TPerfiles_usuarios">
+    <Type Name="TPerfiles_usuarios">
+      <Column Name="perfil_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="usuario_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nombre" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="apellido" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="telefono" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="direccion" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="TUsuarios_TPerfiles_usuarios" Member="TUsuarios" ThisKey="usuario_id" OtherKey="usuario_id" Type="TUsuarios" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TReportes" Member="TReportes">
+    <Type Name="TReportes">
+      <Column Name="reporte_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="evento_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="total_reservas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="total_participacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fecha_reporte" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TEventos_TReportes" Member="TEventos" ThisKey="evento_id" OtherKey="evento_id" Type="TEventos" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TReservas" Member="TReservas">
+    <Type Name="TReservas">
+      <Column Name="reserva_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="usuario" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="evento_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fecha_reserva" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="estado" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Association Name="TEventos_TReservas" Member="TEventos" ThisKey="evento_id" OtherKey="evento_id" Type="TEventos" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TUbicaciones" Member="TUbicaciones">
+    <Type Name="TUbicaciones">
+      <Column Name="ubicacion_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre_ubicacion" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="direccion" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ciudad" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="estado" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="codigo_postal" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="TUbicaciones_TEventos" Member="TEventos" ThisKey="ubicacion_id" OtherKey="ubicacion_id" Type="TEventos" />
+    </Type>
+  </Table>
+  <Table Name="dbo.eventos_populares" Member="eventos_populares">
+    <Type Name="eventos_populares">
+      <Column Name="evento_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="titulo" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="total_reservas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.estadisticas_participacion_evento" Member="estadisticas_participacion_evento">
+    <Type Name="estadisticas_participacion_evento">
+      <Column Name="evento_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="titulo" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="total_participacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.sp_ActualizarEvento" Method="sp_ActualizarEvento">
+    <Parameter Name="evento_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="titulo" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="descripcion" Type="System.String" DbType="Text" />
+    <Parameter Name="fecha_evento" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="hora_inicio" Type="System.TimeSpan" DbType="Time" />
+    <Parameter Name="hora_fin" Type="System.TimeSpan" DbType="Time" />
+    <Parameter Name="ubicacion_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="creado_por" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ValidarUsuario" Method="sp_ValidarUsuario">
+    <Parameter Name="nombre_usuario" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="contrasena" Type="System.String" DbType="NVarChar(255)" />
+    <ElementType Name="sp_ValidarUsuarioResult">
+      <Column Name="Rol" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CodError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Mensaje" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_ActualizarPerfilUsuario" Method="sp_ActualizarPerfilUsuario">
+    <Parameter Name="perfil_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nombre" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="apellido" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="telefono" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="direccion" Type="System.String" DbType="NVarChar(255)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ActualizarReserva" Method="sp_ActualizarReserva">
+    <Parameter Name="reserva_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="estado" Type="System.String" DbType="NVarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ActualizarUbicacion" Method="sp_ActualizarUbicacion">
+    <Parameter Name="ubicacion_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nombre_ubicacion" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="direccion" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="ciudad" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="estado" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="codigo_postal" Type="System.String" DbType="NVarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ActualizarUsuario" Method="sp_ActualizarUsuario">
+    <Parameter Name="usuario_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nombre_usuario" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="contrasena" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="correo_electronico" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="rol" Type="System.String" DbType="NVarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_BuscarEventosPorFecha" Method="sp_BuscarEventosPorFecha">
+    <Parameter Name="fecha_evento" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_BuscarEventosPorFechaResult">
+      <Column Name="evento_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="titulo" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="fecha_evento" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="hora_inicio" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="hora_fin" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="ubicacion_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="creado_por" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="fecha_creacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_BuscarEventosPorTitulo" Method="sp_BuscarEventosPorTitulo">
+    <Parameter Name="titulo" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="sp_BuscarEventosPorTituloResult">
+      <Column Name="evento_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="titulo" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="fecha_evento" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="hora_inicio" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="hora_fin" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="ubicacion_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="creado_por" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="fecha_creacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_BuscarPerfilesPorApellido" Method="sp_BuscarPerfilesPorApellido">
+    <Parameter Name="apellido" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="sp_BuscarPerfilesPorApellidoResult">
+      <Column Name="perfil_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="usuario_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nombre" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="apellido" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="telefono" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="direccion" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_BuscarPerfilesPorNombre" Method="sp_BuscarPerfilesPorNombre">
+    <Parameter Name="nombre" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="sp_BuscarPerfilesPorNombreResult">
+      <Column Name="perfil_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="usuario_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nombre" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="apellido" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="telefono" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="direccion" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_BuscarReservasPorEvento" Method="sp_BuscarReservasPorEvento">
+    <Parameter Name="evento_id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_BuscarReservasPorEventoResult">
+      <Column Name="reserva_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="usuario" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="evento_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fecha_reserva" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="estado" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_BuscarReservasPorUsuario" Method="sp_BuscarReservasPorUsuario">
+    <Parameter Name="usuario" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="sp_BuscarReservasPorUsuarioResult">
+      <Column Name="reserva_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="usuario" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="evento_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fecha_reserva" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="estado" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_BuscarUbicacionesPorNombre" Method="sp_BuscarUbicacionesPorNombre">
+    <Parameter Name="nombre_ubicacion" Type="System.String" DbType="NVarChar(255)" />
+    <ElementType Name="sp_BuscarUbicacionesPorNombreResult">
+      <Column Name="ubicacion_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombre_ubicacion" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="direccion" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ciudad" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="estado" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="codigo_postal" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_BuscarUsuariosPorCorreo" Method="sp_BuscarUsuariosPorCorreo">
+    <Parameter Name="correo_electronico" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="sp_BuscarUsuariosPorCorreoResult">
+      <Column Name="usuario_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombre_usuario" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="contrasena" Type="System.Data.Linq.Binary" DbType="VarBinary(255) NOT NULL" CanBeNull="false" />
+      <Column Name="correo_electronico" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_creacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="rol" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_BuscarUsuariosPorNombre" Method="sp_BuscarUsuariosPorNombre">
+    <Parameter Name="nombre_usuario" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="sp_BuscarUsuariosPorNombreResult">
+      <Column Name="usuario_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombre_usuario" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="contrasena" Type="System.Data.Linq.Binary" DbType="VarBinary(255) NOT NULL" CanBeNull="false" />
+      <Column Name="correo_electronico" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_creacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="rol" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_CrearEvento" Method="sp_CrearEvento">
+    <Parameter Name="titulo" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="descripcion" Type="System.String" DbType="Text" />
+    <Parameter Name="fecha_evento" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="hora_inicio" Type="System.TimeSpan" DbType="Time" />
+    <Parameter Name="hora_fin" Type="System.TimeSpan" DbType="Time" />
+    <Parameter Name="ubicacion_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="creado_por" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_CrearPerfilUsuario" Method="sp_CrearPerfilUsuario">
+    <Parameter Name="usuario_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nombre" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="apellido" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="telefono" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="direccion" Type="System.String" DbType="NVarChar(255)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_CrearReserva" Method="sp_CrearReserva">
+    <Parameter Name="usuario" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="evento_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_CrearUbicacion" Method="sp_CrearUbicacion">
+    <Parameter Name="nombre_ubicacion" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="direccion" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="ciudad" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="estado" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="codigo_postal" Type="System.String" DbType="NVarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_CrearUsuario" Method="sp_CrearUsuario">
+    <Parameter Name="nombre_usuario" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="contrasena" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="correo_electronico" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="rol" Type="System.String" DbType="NVarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_EliminarEvento" Method="sp_EliminarEvento">
+    <Parameter Name="evento_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_EliminarPerfilUsuario" Method="sp_EliminarPerfilUsuario">
+    <Parameter Name="perfil_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_EliminarReserva" Method="sp_EliminarReserva">
+    <Parameter Name="reserva_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_EliminarUbicacion" Method="sp_EliminarUbicacion">
+    <Parameter Name="ubicacion_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_EliminarUsuario" Method="sp_EliminarUsuario">
+    <Parameter Name="usuario_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_LeerEventos" Method="sp_LeerEventos">
+    <ElementType Name="sp_LeerEventosResult">
+      <Column Name="evento_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="titulo" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="fecha_evento" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="hora_inicio" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="hora_fin" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="ubicacion_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="creado_por" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="fecha_creacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_LeerPerfilesUsuarios" Method="sp_LeerPerfilesUsuarios">
+    <ElementType Name="sp_LeerPerfilesUsuariosResult">
+      <Column Name="perfil_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="usuario_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nombre" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="apellido" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="telefono" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="direccion" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_LeerReservas" Method="sp_LeerReservas">
+    <ElementType Name="sp_LeerReservasResult">
+      <Column Name="reserva_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="usuario" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="evento_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fecha_reserva" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="estado" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_LeerUbicaciones" Method="sp_LeerUbicaciones">
+    <ElementType Name="sp_LeerUbicacionesResult">
+      <Column Name="ubicacion_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombre_ubicacion" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="direccion" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ciudad" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="estado" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="codigo_postal" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_LeerUsuarioPorID" Method="sp_LeerUsuarioPorID">
+    <Parameter Name="usuario_id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_LeerUsuarioPorIDResult">
+      <Column Name="usuario_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombre_usuario" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="correo_electronico" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="rol" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="contrasena" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_LeerUsuarios" Method="sp_LeerUsuarios">
+    <ElementType Name="sp_LeerUsuariosResult">
+      <Column Name="usuario_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombre_usuario" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="correo_electronico" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="rol" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="contrasena" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

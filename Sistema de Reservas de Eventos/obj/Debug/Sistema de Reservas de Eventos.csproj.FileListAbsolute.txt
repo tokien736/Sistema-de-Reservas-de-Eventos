@@ -1,0 +1,78 @@
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\obj\Debug\Sistema de Reservas de Eventos.csproj.AssemblyReference.cache
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\obj\Debug\Sistema de Reservas de Eventos.csproj.CoreCompileInputs.cache
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\Sistema de Reservas de Eventos.dll.config
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\Sistema de Reservas de Eventos.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\Sistema de Reservas de Eventos.pdb
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\csc.exe
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\csc.exe.config
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\csc.rsp
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\csi.exe
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\csi.exe.config
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\csi.rsp
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\System.AppContext.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\System.Console.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\System.IO.Compression.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\System.Net.Http.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\System.Net.Sockets.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\System.ValueTuple.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\System.Xml.XPath.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\vbc.exe
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\vbc.exe.config
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\vbc.rsp
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\VBCSCompiler.exe
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\Antlr3.Runtime.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\Newtonsoft.Json.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\System.Web.Optimization.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\WebGrease.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\System.Web.Optimization.xml
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\Newtonsoft.Json.xml
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\Antlr3.Runtime.pdb
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\es\System.Web.Optimization.resources.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\es\Microsoft.AspNet.FriendlyUrls.resources.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\obj\Debug\Sistema .FCB32ACE.Up2Date
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\obj\Debug\Sistema de Reservas de Eventos.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\obj\Debug\Sistema de Reservas de Eventos.pdb
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\BouncyCastle.Cryptography.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\itextsharp.dll
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\BouncyCastle.Cryptography.xml
+C:\Users\tu_en\source\repos\Sistema de Reservas de Eventos\Sistema de Reservas de Eventos\bin\itextsharp.xml
